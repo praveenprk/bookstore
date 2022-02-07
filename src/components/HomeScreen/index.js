@@ -12,7 +12,7 @@ const HomeMain = () => {
     <Header/>
     <LogoBanner/>
     <SearchBar/>
-    {/* <ProductCards/> */}
+    <ProductCards/>
     </>
   );
 }
