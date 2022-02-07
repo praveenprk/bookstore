@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Row, Col, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../../styles/HomeScreen/ProductCards.css";
 
 function ProductCards() {
@@ -42,21 +43,25 @@ function ProductCards() {
   ];
 
   return (
-    <Row>
-      {newArrivals.map((product, i) => {
-        return (
-          <Col key={i} md={4} sm={6} xs={6}>
-            <Card>
-              <Card.Img src={product.image} />
-              <Card.Body>
-                <Card.Title>{product.product_title}</Card.Title>
-                <Card.Text>{product.price}</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        );
-      })}
-    </Row>
+    <Container>
+      <Row>
+        {newArrivals.map((product, i) => {
+          return (
+            <Col key={i} md={4} sm={6} xs={6}>
+              <Link to="/product/:id">
+                <Card>
+                  <Card.Img src={product.image} />
+                  <Card.Body>
+                    <Card.Title>{product.product_title}</Card.Title>
+                    <Card.Text>{product.price}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Link>
+            </Col>
+          );
+        })}
+      </Row>
+    </Container>
   );
 }
 

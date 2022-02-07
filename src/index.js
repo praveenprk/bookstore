@@ -9,6 +9,7 @@ import HomeMain from './components/HomeScreen'
 import LoginScreen from './components/LoginScreen/LoginScreen'
 import RegisterScreen from './components/LoginScreen/RegisterScreen'
 import Welcome from './pages/Welcome'
+import SingleProductPage from './pages/SingleProductPage';
 
 
 ReactDOM.render(
@@ -16,7 +17,7 @@ ReactDOM.render(
     <BrowserRouter>
     <Routes>
     <Route path="/" element={<HomeMain />} />
-    <Route path="/product" element={<App />} />
+    <Route path="/product/:id" element={<SingleProductPage/>} />
     <Route path="/add-review/:id" element={<ReviewMain />} />
     <Route path="/login" element={<LoginScreen />} />
     <Route path="/register" element={<RegisterScreen />} />
