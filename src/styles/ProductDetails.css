@@ -1,0 +1,9 @@
+.product-info {
+    display: flex column;
+    margin: 2em;
+    padding: 2.5em;
+}
+
+.product-info h3 {
+    margin-bottom: 1em;
+}

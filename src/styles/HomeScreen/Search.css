@@ -1,0 +1,20 @@
+.search-bar {
+    border-radius: 10px;
+    text-align: center;
+    padding: 1em;
+    font-size: 1em;
+}
+
+.bi-search {
+    position: relative;
+    top: 2.5em;
+    left: 1em;
+    font-weight: bold;
+}
+
+.bi-sort-up {
+    position: relative;
+    left: 23em;
+    bottom: 2.5em;
+    font-weight: bold;
+}

@@ -1,0 +1,22 @@
+.product-snippet {
+    display: flex;
+    padding-left: 3.5em;
+
+}
+
+.product-thumb {
+    width: 100px;
+    height: 90px;
+    border: 0px solid transparent;
+    border-radius: 15px;
+}
+
+.product-info-rev {
+    margin: auto;
+}
+
+.product-info span {
+    text-transform: uppercase;
+    color: grey;
+    font-weight: 500;
+}

@@ -1,0 +1,29 @@
+.review-form {
+    margin: auto;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    padding-top: 2.5em;
+}
+
+.footer-note {
+    color: #808080;
+    font-size: small;
+    position: relative;
+    left: 0.4em;
+}
+
+.frm-field {
+    background-color: rgba(200, 200, 200, 0.300);
+    border: 0px solid;
+}
+
+.submit-review {
+    display: flex;
+    margin: auto;
+    width: 70%;
+    height: 3em;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-weight: 500;
+}

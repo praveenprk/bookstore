@@ -1,0 +1,12 @@
+.product-cards {
+    gap: 1em;
+    border: none solid transparent;
+}
+
+.product-thumbs {
+    border-radius: 10px;
+}
+
+.product-cards-thumb {
+    border: 0px solid transparent;
+}

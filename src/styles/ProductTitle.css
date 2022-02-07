@@ -1,0 +1,11 @@
+.product-title-main {
+    margin: 2.5em;
+}
+
+.brand-name {
+color: grey;
+position: relative;
+bottom: 0.5em;
+text-transform: uppercase;
+font-weight: bold;
+}

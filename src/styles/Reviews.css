@@ -1,0 +1,37 @@
+.card {
+    flex-direction: column;
+}
+
+.review-card {
+    /* display: flex row; */
+    padding: 25px;
+    background-color: lightgrey;
+    margin-top: 2.5em;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    border-radius: 20px;
+    border: 0px solid transparent;
+}
+
+.review-left .review-right {
+    display: flex column;
+}
+
+.review-right {
+    margin-left: auto;
+}
+
+.review-left {
+    /* justify-content: center; */
+    align-self: center;
+    padding: 5px;
+}
+
+.review-left sup {
+    font-size: xx-large;
+}
+
+.review-left sub {
+    position: relative;
+    bottom: 1.5em;
+}

@@ -1,0 +1,27 @@
+.star-input-card {
+    border: 0px solid transparent;
+    border-top: 0.5px solid rgba(211, 211, 211, 0.700);
+    border-bottom: 0.5px solid rgba(211, 211, 211, 0.700);
+    background-color: #ffffff;
+    padding: 2.5em;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    margin-top: 2em;
+    border-radius: 0;
+}
+
+.star-input-card p {
+ margin: auto;
+ position: relative;
+ bottom: 1.5em;
+ color: gray;
+}
+
+.ask-review-stars {
+    margin: auto;
+}
+
+.ask-review-stars i {
+    font-size: 1.5em;
+    cursor: pointer;
+}
