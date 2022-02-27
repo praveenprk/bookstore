@@ -10,6 +10,9 @@ import LoginScreen from './components/LoginScreen/LoginScreen'
 import RegisterScreen from './components/LoginScreen/RegisterScreen'
 import Welcome from './pages/Welcome'
 import SingleProductPage from './pages/SingleProductPage';
+import AllProducts from './components/AllProducts/AllProducts';
+import MyProfile from './pages/MyProfile';
+
 
 
 ReactDOM.render(
@@ -22,6 +25,8 @@ ReactDOM.render(
     <Route path="/login" element={<LoginScreen />} />
     <Route path="/register" element={<RegisterScreen />} />
     <Route path="/welcome" element={<Welcome />} />
+    <Route path="/all-products"  element={<AllProducts/>} />
+    <Route path="/profile/:id"  element={<MyProfile/>} />
     <Route path='*' element={<h1>404</h1>}/>
     </Routes>
     </BrowserRouter>

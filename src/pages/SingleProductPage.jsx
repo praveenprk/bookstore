@@ -16,6 +16,7 @@ const SingleProductPage = (props) => {
   let {id} = useParams()
   return <div>
      <Header/>
+     <h1 className='text-center'>Now showing {id}</h1><br/>
       <ProductSingle/>
       <ProductTitle/>
       <StockReview/>
@@ -23,7 +24,7 @@ const SingleProductPage = (props) => {
       <ProductInfoAccordion/>
       <Reviews/>
       <CTA/>
-  </div>;
-};
+  </div>
+}
 
 export default SingleProductPage;
