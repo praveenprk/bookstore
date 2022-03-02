@@ -14,24 +14,30 @@ import ProductDetails from '../components/SingleProductScreen/ProductDetails'
 import { useEffect } from 'react';
 import axios from 'axios';
 import { useState } from 'react';
+import LoggedInHeader from '../components/HomeScreen/LoggedInHeader';
 
 export const productContext = React.createContext()
 
 const SingleProductPage = (props) => {
   
   let {id} = useParams()
-  const [product, getProduct] = useState({})
+  const [product, setProduct] = useState({})
 
-  useEffect(()=> {
-    axios.get(`https://fakestoreapi.com/products/${id}`)
-    .then(res=>getProduct(res.data))
-  }, [])
+  useEffect(
+    () => {
+      axios.get(`/products/viewProduct/${id}`)
+      .then(res => {
+        // console.log(res.data)
+        setProduct(res.data)
+      })
+    }
+  , [])
 
 
   return (<div>
     <productContext.Provider value={product}>
-     <Header/>
-     <h1 className='text-center'>Now showing {id}</h1><br/>
+     <LoggedInHeader/>
+     <h1 className='text-center'>{product.name}</h1><br/>
       <ProductSingle/>
       <ProductTitle/>
       <StockReview/>
