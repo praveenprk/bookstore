@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './index.css'
-import App from './App'
 import ReviewMain from './components/ReviewScreen/ReviewMain'
 import reportWebVitals from './reportWebVitals'
 import HomeMain from './components/HomeScreen'
@@ -10,10 +9,11 @@ import LoginScreen from './components/LoginScreen/LoginScreen'
 import RegisterScreen from './components/LoginScreen/RegisterScreen'
 import Welcome from './pages/Welcome'
 import SingleProductPage from './pages/SingleProductPage';
-import AllProducts from './components/ProductScreens/ProductByCategory';
-import MyProfile from './pages/MyProfile';
-import MyOrderDetails from './components/MyProfileScreen/MyOrderDetails';
-import ProductByCategory from './components/ProductScreens/ProductByCategory';
+import AllProducts from './components/ProductScreens/ProductByCategory'
+import MyProfile from './pages/MyProfile'
+import MyOrderDetails from './components/MyProfileScreen/MyOrderDetails'
+import ProductByCategory from './components/ProductScreens/ProductByCategory'
+import ViewAllProducts from './components/ProductScreens/ViewAllProducts'
 
 let isLogged = false
 
@@ -35,6 +35,7 @@ ReactDOM.render(
     <Route path="/profile/:id"  element={isLogged ? <MyProfile/> : <Navigate to='/login'/>} />
     <Route path="/my-orders/:orderid"  element={<MyOrderDetails/>} />
     <Route path="/category/:cat_name"  element={<ProductByCategory/>} />
+    <Route path="/products/all"  element={<ViewAllProducts/>} />
     <Route path='*' element={<h1>404</h1>}/>
     </Routes>
     </BrowserRouter>
