@@ -7,14 +7,18 @@ const levelBarStyle = {
     marginRight: '1.5em'
 }
 
-const levelSpace = {
-    marginLeft: '0.5em',
-    fontWeight: '500'
+const levelHead = {
+    paddingLeft: '1.5rem',
+    paddingRight: '1.5rem',
+    paddingBottom: '0.5rem'
 }
  
 return (
     <>
-        <span style={levelSpace}>Level</span>
+        <div className='d-flex flex-row justify-content-between' style={levelHead}>
+            <b>Level</b>
+            <span>🎉</span>
+        </div>
         <ProgressBar className='level-bar' style={levelBarStyle}>
             <ProgressBar striped variant="success" now={60} key={1} />
             <ProgressBar variant="warning" now={40} key={2} />
