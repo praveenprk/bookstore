@@ -7,7 +7,6 @@ const LoggedInHeader = () => {
   const navigate = useNavigate()
   
   return (
-    <>
     <ul className='home-header d-flex'>
         <li>
           <i className="bi bi-chevron-double-left"
@@ -25,7 +24,6 @@ const LoggedInHeader = () => {
             <Link to='/profile/:id'><i className="bi bi-person-circle"></i></Link>
         </li>
     </ul>
-    </>
   )
 }
 
