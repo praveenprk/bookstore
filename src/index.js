@@ -15,7 +15,11 @@ import MyProfile from './pages/MyProfile';
 import MyOrderDetails from './components/MyProfileScreen/MyOrderDetails';
 import ProductByCategory from './components/ProductScreens/ProductByCategory';
 
-const isLogged = false
+let isLogged = false
+
+if(localStorage.getItem("userInfo")) {
+  isLogged = true
+}
 
 ReactDOM.render(
   <React.StrictMode>
@@ -38,4 +42,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-reportWebVitals();
+reportWebVitals()
