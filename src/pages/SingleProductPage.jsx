@@ -11,10 +11,25 @@ import StockReview from '../components/SingleProductScreen/StockReview';
 import ProductInfoAccordion  from '../components/SingleProductScreen/ProductInfoAccordion';
 import Reviews from '../components/SingleProductScreen/Reviews';
 import ProductDetails from '../components/SingleProductScreen/ProductDetails'
+import { useEffect } from 'react';
+import axios from 'axios';
+import { useState } from 'react';
+
+export const productContext = React.createContext()
 
 const SingleProductPage = (props) => {
+  
   let {id} = useParams()
-  return <div>
+  const [product, getProduct] = useState({})
+
+  useEffect(()=> {
+    axios.get(`https://fakestoreapi.com/products/${id}`)
+    .then(res=>getProduct(res.data))
+  }, [])
+
+
+  return (<div>
+    <productContext.Provider value={product}>
      <Header/>
      <h1 className='text-center'>Now showing {id}</h1><br/>
       <ProductSingle/>
@@ -24,7 +39,8 @@ const SingleProductPage = (props) => {
       <ProductInfoAccordion/>
       <Reviews/>
       <CTA/>
-  </div>
+    </productContext.Provider>
+  </div>)
 }
 
 export default SingleProductPage;
