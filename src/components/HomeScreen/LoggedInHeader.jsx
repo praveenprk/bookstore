@@ -1,13 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import '../../styles/HomeScreen/Header.css'
 
 const LoggedInHeader = () => {
+  
+  const navigate = useNavigate()
+  
   return (
     <>
     <ul className='home-header d-flex'>
         <li>
-          <Link to='/'><i className="bi bi-chevron-double-left"></i></Link>
+          <i className="bi bi-chevron-double-left"
+          onClick={() => navigate(-1)}></i>
         </li>
         <li>
             <Link to='/'><i className="bi bi-house"></i></Link>
