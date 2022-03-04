@@ -28,7 +28,7 @@ const MyOrders = () => {
                     <Link to={`/my-orders/${order.id}`}>
                     <li className='orders-card' key={i}>
                         <div className='d-flex flex-row'>
-                        <img width={50} height={50} src={order.image}/>
+                        <img width={50} height={50} src={order.image} alt={`order${order.id}`}/>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <p>{order.title}</p>
                         </div>

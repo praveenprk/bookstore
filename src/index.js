@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './index.css'
 import ReviewMain from './components/ReviewScreen/ReviewMain'
@@ -8,12 +8,15 @@ import HomeMain from './components/HomeScreen'
 import LoginScreen from './components/LoginScreen/LoginScreen'
 import RegisterScreen from './components/LoginScreen/RegisterScreen'
 import Welcome from './pages/Welcome'
-import SingleProductPage from './pages/SingleProductPage';
+import SingleProductPage from './pages/SingleProductPage'
 import AllProducts from './components/ProductScreens/ProductByCategory'
 import MyProfile from './pages/MyProfile'
 import MyOrderDetails from './components/MyProfileScreen/MyOrderDetails'
 import ProductByCategory from './components/ProductScreens/ProductByCategory'
 import ViewAllProducts from './components/ProductScreens/ViewAllProducts'
+
+import {store} from './app/store'
+import {Provider} from 'react-redux'
 
 let isLogged = false
 
@@ -23,6 +26,7 @@ if(localStorage.getItem("userInfo")) {
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={store}>
     <BrowserRouter>
     <Routes>
     <Route path="/" element={<HomeMain />} />
@@ -39,8 +43,9 @@ ReactDOM.render(
     <Route path='*' element={<h1>404</h1>}/>
     </Routes>
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
-);
+)
 
 reportWebVitals()

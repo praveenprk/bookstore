@@ -1,3 +1,8 @@
+# About this repo
+
+This is the frontend react code for shoestore 919Kicks which I am creating in
+order to practice React.  This is not for commercial purpose and this is completely
+for personal educational purposes only
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

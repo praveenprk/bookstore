@@ -1,20 +1,19 @@
-import React from 'react';
-import { useParams } from 'react-router';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import React from 'react' 
+import { useParams } from 'react-router'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 import '../../src/App.css'
-import CTA from '../components/SingleProductScreen/CTA';
-import Header from '../components/SingleProductScreen/Header';
-import ProductSingle from '../components/SingleProductScreen/ProductSingle';
-import ProductTitle from '../components/SingleProductScreen/ProductTitle';
-import StockReview from '../components/SingleProductScreen/StockReview';
-import ProductInfoAccordion  from '../components/SingleProductScreen/ProductInfoAccordion';
-import Reviews from '../components/SingleProductScreen/Reviews';
+import CTA from '../components/SingleProductScreen/CTA'
+import ProductSingle from '../components/SingleProductScreen/ProductSingle'
+import ProductTitle from '../components/SingleProductScreen/ProductTitle'
+import StockReview from '../components/SingleProductScreen/StockReview'
+import ProductInfoAccordion  from '../components/SingleProductScreen/ProductInfoAccordion'
+import Reviews from '../components/SingleProductScreen/Reviews'
 import ProductDetails from '../components/SingleProductScreen/ProductDetails'
-import { useEffect } from 'react';
-import axios from 'axios';
-import { useState } from 'react';
-import LoggedInHeader from '../components/HomeScreen/LoggedInHeader';
+import { useEffect } from 'react'
+import axios from 'axios'
+import { useState } from 'react'
+import LoggedInHeader from '../components/HomeScreen/LoggedInHeader'
 
 export const productContext = React.createContext()
 
