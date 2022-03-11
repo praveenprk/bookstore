@@ -22,7 +22,7 @@ const ProductByCategory = () => {
     <>
     <LoggedInHeader/>
     <div className="d-flex flex-column p-4">
-      <h4 className="text-center pb-5"><b>{cat_name.toUpperCase()}</b></h4>
+      <h4 className="text-center pb-5"><b>{cat_name}</b></h4>
       <ul className="pb-5">
         {
           products.map((product, i) => {
@@ -30,7 +30,7 @@ const ProductByCategory = () => {
             return(
             <>
             <Link to={`/product/${product.id}`}>
-            <li key={i} className="orders-card" key={i}>
+            <li key={i} className="orders-card">
                 <div className="d-flex flex-row justify-content-center">
                 <img width={50} height={50} src={product.image}/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
