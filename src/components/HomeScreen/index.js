@@ -5,19 +5,22 @@ import LogoBanner from './LogoBanner'
 import SearchBar from './SearchBar'
 import ProductCards from './ProductCards'
 import LoggedInHeader from './LoggedInHeader'
-
-// import './App.css';
+import 'react-toastify/dist/ReactToastify.css'
+import { Provider } from 'react-redux'
+import { store } from '../../stores/store'
 
 const HomeMain = () => {
 
   const parsedInfo = JSON.parse(localStorage.getItem('userInfo'))
-  
+
   return (
     <>
+    <Provider store={store}>
     {parsedInfo ?  <LoggedInHeader /> : <Header/>}
     <LogoBanner/>
     <SearchBar/>
     <ProductCards/>
+    </Provider>
     </>
   )
 }
