@@ -1,7 +1,16 @@
 import React, { useState } from 'react'
 import { Col, Form, Row } from 'react-bootstrap'
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
+import Button from '@mui/material/Button'
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import { useDispatch } from 'react-redux'
 import {useNavigate} from 'react-router-dom'
+import { toast } from 'react-toastify'
+import { register } from '../../features/register/registerSlice'
+import DeleteIcon from '@mui/icons-material/Delete';
+import { AccessAlarm } from '@mui/icons-material';
+
 
 function RegisterScreen() {
 
@@ -13,6 +22,7 @@ function RegisterScreen() {
     const [newsletter, setNewsletter] = useState(true)
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const handleEmail = (e) => {
       setEmail(e.target.value)
@@ -43,14 +53,43 @@ function RegisterScreen() {
 
     const handleSubmit = (e) => {
       e.preventDefault()
-      navigate('/welcome')
+      if(email === ''|| 
+      password === '' ||
+      fname === '' ||
+      lname === '' ||
+      phone === '') {
+        toast.warn('Please fill all the fields',{
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          })
+      }
+        dispatch(register({email, password, fname, lname, phone, newsletter}))
+        navigate('/welcome')
     }
     
   return(
     <div className='px-5 mt-5'>
         <legend className='text-center'>Register @ 919Kicks</legend>
         &nbsp;
-        <Form onSubmit={handleSubmit} method="POST">
+        <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+      <TextField id="standard-basic" label="Outlined" variant="outlined" />
+      <TextField id="standard-basic" label="Filled" variant="outlined" />
+      <TextField id="standard-basic" label="Standard" variant="outlined" />
+      <Button variant="contained">Register</Button>      
+    </Box>
+  {/* <Form onSubmit={handlesSubmit} method="POST">
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridEmail">
       <Form.Control type="email" name="email" placeholder="Enter email"
@@ -82,13 +121,13 @@ function RegisterScreen() {
     <Form.Check type="checkbox"
     onChange={handleNewsletter}
     checked={newsletter}
-    label="Send me exciting offers, coupons, & deals!" />
+    label="Send me exciting offers, coupons, &amp; deals!" />
   </Form.Group>
 
-  <Button variant="primary" type="submit">
+  <Button variant="contained" type="submit">
     Register
   </Button>
-</Form>
+  </Form> */}
     </div>)
 }
 
