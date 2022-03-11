@@ -2,14 +2,19 @@ import axios from "axios"
 import { useState } from "react"
 import { useEffect } from "react"
 import { Card, Col, Container, Row, Badge, Button } from "react-bootstrap"
+import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 // import { useParams } from "react-router"
 // import { Link } from "react-router-dom"
 import LoggedInHeader from "../HomeScreen/LoggedInHeader"
 
-const ViewAllProducts = () => {
+const ViewAllProducts = (props) => {
 
   const [products, setProducts] = useState([])
+
+  // const checkState = useSelector(state => state.auth.userDetails)
+  // console.log(checkState)
+    
 
   useEffect(() => {
     axios.get('/products/all')
