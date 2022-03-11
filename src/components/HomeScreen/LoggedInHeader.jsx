@@ -1,17 +1,18 @@
 import { Logout, PersonAdd, Settings } from '@mui/icons-material'
 import { Avatar, Box, Divider, IconButton, List, ListItem, ListItemButton, ListItemIcon, Menu, MenuItem, Tooltip } from '@mui/material'
+import MenuSharpIcon from '@mui/icons-material/MenuSharp';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import React, { useState } from 'react'
 import HomeIcon from '@mui/icons-material/Home';
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import '../../styles/HomeScreen/Header.css'
-import MenuIcon from '@mui/icons-material/Menu';
-import Drawer from '@mui/material/Drawer';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import {Drafts} from '@mui/icons-material/';
+// import MenuIcon from '@mui/icons-material/Menu'
+import Drawer from '@mui/material/Drawer'
+import ListItemText from '@mui/material/ListItemText'
+import InboxIcon from '@mui/icons-material/MoveToInbox'
+
 
 
 const LoggedInHeader = () => {
@@ -64,16 +65,15 @@ const LoggedInHeader = () => {
       {
         leftLi ?
         <IconButton
-            size="large"
+            size="small"
             edge="start"
             color="inherit"
             aria-label="menu"
             onClick={() => showMenu()}
           >
-        <MenuIcon/>
+        <MenuSharpIcon/>
         </IconButton>  :
-          <i className="bi bi-chevron-double-left"
-          onClick={() => navigate(-1)}></i>
+          <ChevronLeftIcon onClick={() => navigate(-1)}/>
       }
         </li>
         <li>

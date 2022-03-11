@@ -74,7 +74,7 @@ const ProductCards = () => {
           </CardContent>
           <CardActions display='inline' ml='10'>
             <Button size="small" color="primary">
-              <Link to={`/products/${product.id}`}>View</Link>
+              <Link to={`/product/${product.id}`}>View</Link>
               <Chip padding={2} label={`$${product.price}`} variant="outlined"/>
             </Button>
           </CardActions>

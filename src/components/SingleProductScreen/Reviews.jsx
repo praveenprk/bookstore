@@ -1,33 +1,35 @@
+import { Divider, Rating } from '@mui/material'
+import { Box } from '@mui/system'
 import React from 'react'
-import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
-import '../../styles/Reviews.css'
+// import '../../styles/Reviews.css'
 
 const Reviews = () => {
+    
+    const [stars, setStars] = React.useState(0)
+
     return (
-        <Card className='review-card'>
-            <div className='review-left'>
+        <Box component="card"
+        sx={{
+            width: 300,
+            height: 300
+          }}>
             <sup>4.6</sup>
                 &nbsp;
                 <sub>/5</sub>
                 &nbsp;
                 <p>Based on 120 Reviews</p>
-                <div className='stars'>
-                    <i className="bi bi-star-fill"></i>&nbsp;
-                    <i className="bi bi-star-fill"></i>&nbsp;
-                    <i className="bi bi-star-fill"></i>&nbsp;
-                    <i className="bi bi-star-fill"></i>&nbsp;
-                    <i className="bi bi-star-half"></i>
-                </div>
+            <Divider/>
+                <Rating
+                    name="simple-controlled"
+                    value={stars}
+                    onChange={(event, newStars) => {
+                    console.log(newStars)
+                    setStars(newStars)
+                }}
+            />
                 <Link to='/add-review'>Add Review</Link>
-            </div>
-            
-            {/* <div className='review-right'>
-                <ProgressBar variant="success" now={40} />
-                <ProgressBar variant="success" now={40} />
-                <ProgressBar variant="success" now={40} />
-            </div> */}
-        </Card>
+        </Box>
     )
 }
 
