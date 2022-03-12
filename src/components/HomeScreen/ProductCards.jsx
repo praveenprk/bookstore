@@ -2,7 +2,7 @@ import axios from "axios"
 import React, { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
-import productSlice, { setProductData } from "../../features/products/productSlice"
+import { setProductData } from "../../features/products/productSlice"
 import "../../styles/HomeScreen/ProductCards.css"
 import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
@@ -18,18 +18,18 @@ const ProductCards = () => {
   const [newArrivals, setNewArrivals] = React.useState([])
   const dispatch = useDispatch()
 
-  useEffect(async () => {
+  useEffect(() => {
     // await axios.get('https://fakestoreapi.com/products?limit=6')
+    const fetchProducts = async () => {
     await axios.get('/products/all')
     .then(
       res => {
         setNewArrivals(res.data)
       }
     )
-    return () => {
-      console.log('close')
     }
-  },  [newArrivals])
+    fetchProducts()
+  }, [])
 
   if(newArrivals.length > 0)
     dispatch(setProductData(newArrivals))
@@ -78,8 +78,11 @@ const ProductCards = () => {
           </CardContent>
           <CardActions display='inline' ml='10'>
             <Button size="small" color="primary">
-              <Link to={`/product/${product.id}`}>View</Link>
-              <Chip padding={2} label={`$${product.price}`} variant="outlined"/>
+              <Link to={`/product/${product._id}`}>View</Link>
+              <Chip
+              padding={2}
+              label={`$${product.price}`}
+              variant="outlined"/>
             </Button>
           </CardActions>
         </Card>
