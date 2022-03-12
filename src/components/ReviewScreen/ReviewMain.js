@@ -4,12 +4,13 @@ import ReviewHeader from './ReviewHeader'
 import ProductSnippet from './ProductSnippet'
 import AskRating from './AskRating'
 import ReviewTitle from './ReviewTitle'
+import LoggedInHeader from '../HomeScreen/LoggedInHeader'
 // import './App.css';
 
 const ReviewMain = () => {
   return (
     <>
-    <ReviewHeader/>
+    <LoggedInHeader/>
     <ProductSnippet/>
     <AskRating/>
     <ReviewTitle/>
