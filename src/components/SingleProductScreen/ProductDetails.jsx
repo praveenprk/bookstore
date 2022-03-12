@@ -1,19 +1,26 @@
-import React from 'react'
-import { useContext } from 'react'
-import { productContext } from '../../pages/SingleProductPage'
+import { cleanup } from '@testing-library/react'
+import React, {useState ,useEffect} from 'react'
+import { useParams } from 'react-router-dom'
 import '../../styles/ProductDetails.css'
 
 
 function  ProductDetails() {
-    const product = useContext(productContext)
-    // console.log(product.description)
+
+    const {id} = useParams()
+    const [item, itemDetails] = useState({})
+
+    useEffect(() => {
+        fetch(`https://fakestoreapi.com/products/${id}`)
+        .then(response => response.json())
+        .then(data => itemDetails(data))
+      },[])
+
     return (
         <div className='product-info'>
             <h3>Product Info</h3>
-            <p>{product.description}</p>
-            {/* <button className='btn btn-success'>Button</button> */}
+            <p>{item.description}</p>
         </div>
     )
 }
 
-export default  ProductDetails
+export default ProductDetails

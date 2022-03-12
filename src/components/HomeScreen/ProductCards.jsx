@@ -1,17 +1,17 @@
-import axios from "axios";
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import productSlice, { setProductData } from "../../features/products/productSlice";
+import axios from "axios"
+import React, { useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { Link } from "react-router-dom"
+import productSlice, { setProductData } from "../../features/products/productSlice"
 import "../../styles/HomeScreen/ProductCards.css"
 import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Container from "@mui/material/Container";
-import { Chip, Grid } from "@mui/material";
+import CardActions from '@mui/material/CardActions'
+import CardContent from '@mui/material/CardContent'
+import CardMedia from '@mui/material/CardMedia'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+import Container from "@mui/material/Container"
+import { Chip, Grid } from "@mui/material"
 
 const ProductCards = () => {
 
@@ -19,16 +19,20 @@ const ProductCards = () => {
   const dispatch = useDispatch()
 
   useEffect(async () => {
-    await axios.get('https://fakestoreapi.com/products?limit=6')
-    // await axios.get('/products/all')
+    // await axios.get('https://fakestoreapi.com/products?limit=6')
+    await axios.get('/products/all')
     .then(
       res => {
         setNewArrivals(res.data)
-        dispatch(setProductData(res.data))
-        
       }
     )
-  },[])
+    return () => {
+      console.log('close')
+    }
+  },  [newArrivals])
+
+  if(newArrivals.length > 0)
+    dispatch(setProductData(newArrivals))
 
 /* <Row>
         {newArrivals.map((product, i) => {
@@ -55,7 +59,7 @@ const ProductCards = () => {
     <Grid container spacing={2}>
     {
       newArrivals.map((product,i) => (
-        <Grid item xs={6} sm={4} lg={3}>
+        <Grid item xs={6} sm={4} lg={3} key={i}>
         <Card sx={{ maxWidth: 345 }} key={i}>
           <CardMedia
             component="img"
